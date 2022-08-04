@@ -1,0 +1,36 @@
+.search-section {
+  max-width: calc(100% - 300px);
+}
+
+.search-wrapper {
+  margin: 0.5rem 1rem;
+}
+
+.title-wrapper {
+  justify-content: flex-end;
+}
+
+.title-wrapper app-search-input {
+  width: 55%;
+}
+
+@media (max-width: 1200px) {
+  .search-section {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 900px) {
+  .search-section {
+    max-width: 100%;
+  }
+  .title-wrapper app-search-input {
+    width: 75%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-wrapper app-search-input {
+    width: 100%;
+  }
+}

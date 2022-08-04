@@ -1,0 +1,95 @@
+.settings-section {
+  max-width: calc(100% - 300px);
+}
+
+.content {
+  padding: 0 1rem;
+  max-width: 75%;
+}
+
+.card-profile,
+.card-preferences,
+.auth {
+  padding: 1.2rem 1rem;
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.content .btn {
+  max-width: 100px;
+  height: 45px;
+}
+
+.auth-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-section .btn {
+  max-width: 100%;
+  height: 55px;
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.auth .btn {
+  max-width: 70%;
+}
+
+.auth span {
+  color: var(--font-color-primary);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 900px) {
+  .settings-section,
+  .content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth {
+    gap: 10px;
+  }
+}

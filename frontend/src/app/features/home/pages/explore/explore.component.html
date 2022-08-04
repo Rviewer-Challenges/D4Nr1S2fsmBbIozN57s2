@@ -1,0 +1,22 @@
+<div class="home-section" *ngIf="feeds">
+  <section class="recently">
+    <div class="title-wrapper">
+      <span class="title-section">Explore news</span>
+      <a class="refresh" [class.loading]="isLoading" *ngIf="getSkip >= 10" (click)="reloadData()">
+        <i class="bx bx-refresh"></i>
+      </a>
+    </div>
+    <div class="news-container">
+      <div class="skeletons" *ngIf="isLoading">
+        <app-card-new></app-card-new>
+        <app-card-new></app-card-new>
+        <app-card-new></app-card-new>
+      </div>
+      <app-news-container *ngIf="!isLoading" [feeds]="feeds" (moreItems)="onScroll()"></app-news-container>
+    </div>
+  </section>
+  <section class="websites">
+    <app-card-websites-a *ngIf="isLoading"></app-card-websites-a>
+    <app-websites-card *ngIf="!isLoading" [websites]="websites"></app-websites-card>
+  </section>
+</div>

@@ -1,0 +1,25 @@
+.home-section {
+  display: grid;
+  grid-template-columns: auto 300px;
+  gap: 0.5rem;
+}
+
+.home-section .websites {
+  width: 300px;
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .home-section .recently .news {
+    grid-template-columns: repeat(1, 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    grid-template-columns: 100%;
+  }
+  .home-section .websites {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,67 @@
+.card.card-websites {
+  cursor: default;
+  opacity: 1;
+  margin: 0;
+  padding: 0 !important;
+  position: fixed;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  transform: translate(0, 78px);
+}
+
+.card.card-websites .card-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.6rem 0.8rem;
+}
+
+.card.card-websites .item {
+  display: flex;
+  padding: 0.5rem 0.8rem;
+  gap: 10px;
+  transition: 0.4s;
+  min-height: 65px;
+  align-items: center;
+}
+
+.card.card-websites a.item {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.card.card-websites .item:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.card.card-websites .item:hover,
+.card.card-websites .more:hover {
+  background-color: var(--bg-hover);
+  cursor: pointer;
+}
+
+.card.card-websites .item .website-name {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card.card-websites .item figure {
+  width: 3.5rem;
+  height: 3.5rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  border-radius: 50%;
+}
+
+.card.card-websites .item figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}

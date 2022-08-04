@@ -1,0 +1,43 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "strictPropertyInitialization": false,
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "paths": {
+      "@components/*": [ "app/core/components/*" ],
+      "@interfaces/*": [ "app/core/interfaces/*" ],
+      "@models/*": [ "app/core/models/*" ],
+      "@services/*": [ "app/core/services/*" ],
+      "@utils/*": [ "app/core/utils/*" ],
+      "@interceptors/*": [ "app/core/interceptors/*" ],
+      "@guards/*": [ "app/core/guards/*" ],
+      "@constants/*": [ "app/core/constants/*" ],
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

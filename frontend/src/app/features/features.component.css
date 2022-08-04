@@ -1,0 +1,27 @@
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.wrapper.open .container {
+  margin-left: 80px;
+}
+
+.wrapper .container {
+  min-height: 100vh;
+  margin-left: 250px;
+  width: auto;
+}
+
+@media (max-width: 1280px) {
+  .wrapper .container {
+    margin-left: 78px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper .container {
+    margin-left: 0 !important;
+    margin-bottom: 55px !important;
+  }
+}

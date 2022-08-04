@@ -1,0 +1,9 @@
+.saved {
+  max-width: calc(100% - 300px);
+}
+
+@media (max-width: 900px) {
+  .saved {
+    max-width: 100%;
+  }
+}

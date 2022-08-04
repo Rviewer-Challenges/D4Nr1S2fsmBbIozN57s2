@@ -1,0 +1,16 @@
+form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  color: var(--primary-color);
+  margin-left: 5px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}

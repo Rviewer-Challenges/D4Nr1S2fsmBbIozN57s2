@@ -1,0 +1,13 @@
+<div class="card card-websites">
+  <span class="card-title">Websites availables</span>
+  <div class="item" *ngFor="let website of websites">
+    <figure *ngIf="website.image && website.image.length > 0">
+      <img [src]="website.image" alt="website-image" onerror="this.src='/assets/images/not-found-image.jpg'">
+    </figure>
+    <span class="website-name">{{website.name}}</span>
+    <button [class.btn-following]="website.inUser" (click)="subscribeWebsite(website._id)"
+      class="btn btn-primary btn-subscribe">{{ (website.inUser) ?
+      'Following' : 'Subscribe' }}</button>
+  </div>
+  <a class="item" routerLink="/websites">Show more...</a>
+</div>

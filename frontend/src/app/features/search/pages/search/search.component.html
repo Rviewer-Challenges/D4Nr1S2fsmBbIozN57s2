@@ -1,0 +1,16 @@
+<section class="search-section">
+  <div class="title-wrapper">
+    <app-search-input [value]="getQueryValue" (search)="resetQuery($event)"></app-search-input>
+  </div>
+  <div class="search-wrapper">
+    <div class="skeletons" *ngIf="isLoading">
+      <app-card-new></app-card-new>
+      <app-card-new></app-card-new>
+      <app-card-new></app-card-new>
+      <app-card-new></app-card-new>
+    </div>
+    <app-no-feeds *ngIf="!isLoading && feeds.length < 1" [messageIndex]="2"></app-no-feeds>
+    <app-news-container *ngIf="!isLoading && feeds && feeds.length > 0" [feeds]="feeds" (moreItems)="onScroll()">
+    </app-news-container>
+  </div>
+</section>

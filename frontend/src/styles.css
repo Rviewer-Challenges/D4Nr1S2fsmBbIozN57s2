@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+body.modal-open {
+  height: 100vh;
+  overflow: hidden;
+  padding-right: 15px;
+}
+
+body.dark {
+  --bg-color: #000;
+  --bg-color-card: #16181c;
+  --bg-color-card-2: #000;
+  --bg-color-secondary: #e7e9ea;
+  --font-color-primary: #e7e9ea;
+  --box-shadow: none;
+  --bg-hover: rgb(231, 233, 234, 0.1);
+  --bg-button-follow: #ffffff;
+  --bg-skeleton: #424449;
+  --bg-skeleton-2: #2e2c2c;
+  --text-shadow-color: #000000;
+  --bg-blur: hsla(0, 0%, 10%, 0.6);
+  --border-input: 1px solid #333639;
+}
+
+:root {
+  --primary-color: #0098fa;
+  --secondary-color: #e66d9b;
+  --bg-color: #f4faff;
+  --bg-color-card: #ffffff;
+  --bg-color-card-2: #ffffff;
+  --bg-color-scroll: #a5a5a5;
+  --bg-color-secondary: #262626;
+  --bg-button-follow: transparent;
+  --bg-hover: #e2e2e2;
+  --font-color-primary: #000;
+  --font-color-secondary: #71767b;
+  --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --bg-skeleton: #fafafa;
+  --bg-skeleton-2: #cdcdcd;
+  --text-shadow-color: #e6e6e6;
+  --bg-blur: hsla(0, 0%, 100%, 0.8);
+  --border-input: none;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color-scroll);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-color-scroll);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--bg-color-scroll);
+}
+
+.card {
+  margin: 0.5rem 0;
+  background: var(--bg-color-card);
+  color: var(--font-color-primary);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0 1rem;
+  font-size: 14px;
+  border-radius: 8px;
+  color: #fff;
+  width: fit-content;
+  font-weight: bold;
+  height: 40px;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.btn.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.btn.btn-danger {
+  background-color: var(--secondary-color);
+  border: none;
+}
+
+.btn.btn-lg {
+  height: 50px;
+  font-size: 18px;
+}
+
+label.floating {
+  position: relative;
+}
+
+label.floating:hover {
+  cursor: text;
+}
+
+label.floating input {
+  background: transparent;
+  /* border-style: none; */
+  border: 1px solid #71767b;
+  border-radius: 8px;
+  height: 54px;
+  width: 100%;
+  padding: 20px 10px 5px 10px;
+  font-size: 16px;
+  transition: 0.2s;
+  color: var(--font-color-primary);
+}
+label.floating input::placeholder {
+  opacity: 0;
+}
+label.floating span {
+  color: #71767b;
+  position: absolute;
+  top: -15px;
+  left: 11px;
+  transform: translateY(30px);
+  font-size: 16px;
+  width: 95%;
+  transition-duration: 0.2s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+label.floating:focus-within > span,
+input:not(:placeholder-shown) + span {
+  color: var(--primary-color);
+  transform: translateY(0px);
+  font-size: 12px;
+  top: 7px;
+}
+
+label.floating:not(:focus-within) > span {
+  color: #71767b;
+}
+
+input:focus,
+input:focus-within {
+  border: 1px solid var(--primary-color) !important;
+}
+
+.divisor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2rem 0;
+}
+
+.divisor .line {
+  height: 1px;
+  background: #71767b;
+  flex: 1;
+}
+
+.divisor span {
+  color: #71767b;
+  font-size: 15px;
+  margin: 0 10px;
+  font-weight: 300;
+}
+
+.text-error {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.error {
+  color: var(--secondary-color);
+}
+
+.btn-subscribe {
+  max-width: 95px;
+  min-width: 90px;
+  width: fit-content;
+  border-radius: 30px;
+  font-weight: 500;
+  height: 36px;
+}
+
+.btn-following {
+  background: var(--bg-button-follow) !important;
+  border: 1px solid transparent !important;
+  color: #000 !important;
+  border-color: var(--primary-color) !important;
+}
+
+section > .title-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: auto;
+  min-height: 70px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-blur);
+}
+
+.title-wrapper > span.title-section {
+  font-size: 42px;
+  font-weight: bold;
+  color: var(--font-color-primary);
+}
+
+.title-wrapper > a.refresh {
+  font-size: 42px;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease 0s;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.title-wrapper > a.refresh.loading {
+  -webkit-animation: infinite-spinning 1s ease-out 0s infinite normal;
+  animation: infinite-spinning 1s ease-out 0s infinite normal;
+}
+
+.title-wrapper > a.refresh:hover {
+  background-color: #0096fa41;
+  transform: rotate(135deg);
+}
+
+.news-container {
+  margin: 0 1rem;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  section > .title-wrapper {
+    background: transparent;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Sekeletons design */
+
+.gradient {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: var(--bg-skeleton);
+  background: linear-gradient(
+    to right,
+    var(--bg-skeleton) 15%,
+    var(--bg-skeleton-2) 20%,
+    var(--bg-skeleton) 30%,
+    var(--bg-skeleton) 15%
+  );
+  background-size: 1000px 640px;
+
+  position: relative;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .title-wrapper > span.title-section {
+    font-size: 32px;
+  }
+}

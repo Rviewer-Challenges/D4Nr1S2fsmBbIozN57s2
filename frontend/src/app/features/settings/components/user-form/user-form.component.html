@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" (submit)="updateUserInfo()">
+  <div class="input-group">
+    <label for="email-input" class="floating">
+      <input formControlName="email" type="text" id="email-input" placeholder="email">
+      <span>Email</span>
+    </label>
+    <div *ngIf="validateForm('email')" class="text-error">
+      <span *ngIf="validateField('email', 'required')" class="error">must provide an email</span>
+      <span *ngIf="validateField('email', 'pattern')" class="error">email format wrong</span>
+    </div>
+  </div>
+  <div class="input-group">
+    <label for="name" class="floating">
+      <input formControlName="name" type="text" id="name" placeholder="email">
+      <span>Name</span>
+    </label>
+    <div *ngIf="validateForm('name')" class="text-error">
+      <span *ngIf="validateField('name', 'required')" class="error">must provide a name</span>
+      <span *ngIf="validateField('name', 'pattern')" class="error">name format wrong</span>
+    </div>
+  </div>
+  <div class="input-group">
+    <label for="lastName" class="floating">
+      <input formControlName="lastName" type="text" id="lastName" placeholder="email">
+      <span>Lastname</span>
+    </label>
+    <div *ngIf="validateForm('lastName')" class="text-error">
+      <span *ngIf="validateField('lastName', 'pattern')" class="error">lastName format wrong</span>
+    </div>
+  </div>
+  <span class="message" *ngIf="message">{{message}}</span>
+  <button class="btn btn-primary btn-lg" type="submit">Save</button>
+</form>

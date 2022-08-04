@@ -1,0 +1,21 @@
+<div class="news" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll()">
+  <app-new-card-recent *ngIf="recentFeed" [feed]="recentFeed"></app-new-card-recent>
+  <div class="card card-new" *ngFor="let feed of feeds; let i = index">
+    <figure *ngIf="feed.image">
+      <img [src]="feed.image" alt="news-image" loading="lazy">
+    </figure>
+    <div class="card-body">
+      <div class="title-wrapper">
+        <a (click)="moreDetails(feed._id)" class="new-title"> {{feed.title }}</a>
+        <a class="save" (click)="saveFeed(feed._id)">
+          <i class="bx bx-bookmark-plus" [class.bxs-bookmark-minus]="feed.inUser" #iconi
+            (mouseover)="changeStyle(iconi, true)" (mouseout)="changeStyle(iconi, false)"></i>
+        </a>
+      </div>
+      <p class="date">
+        {{ feed.pubDate | date: 'dd/MM/yyyy, h:mm a' }} &bull; by
+        <span>{{ feed.website.name }}</span>
+      </p>
+    </div>
+  </div>
+</div>

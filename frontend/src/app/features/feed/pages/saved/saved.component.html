@@ -1,0 +1,15 @@
+<section class="saved">
+  <div class="title-wrapper">
+    <span class="title-section">Saved</span>
+  </div>
+  <div class="news-container">
+    <div class="skeletons" *ngIf="isLoading">
+      <app-card-new></app-card-new>
+      <app-card-new></app-card-new>
+      <app-card-new></app-card-new>
+    </div>
+    <app-no-feeds *ngIf="!isLoading && feeds.length < 1" [messageIndex]="1"></app-no-feeds>
+    <app-news-container [feeds]="feeds" *ngIf="!isLoading && feeds.length > 0" (moreItems)="onScroll()">
+    </app-news-container>
+  </div>
+</section>

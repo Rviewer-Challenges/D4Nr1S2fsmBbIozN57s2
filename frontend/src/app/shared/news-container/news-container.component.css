@@ -1,0 +1,109 @@
+.news {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+}
+
+.card.card-new {
+  display: flex;
+  align-items: flex-start;
+  min-height: 13rem;
+  height: 13rem;
+  max-height: 13rem;
+  transition: 0.5s;
+}
+
+.card.card.card-new:hover {
+  box-shadow: rgb(0 0 0 / 20%) 1px 1px 24px 1px;
+}
+
+.card.card-new figure {
+  height: 100%;
+  width: 16rem;
+}
+
+.card.card-new figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+.card.card-new .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  padding: 1rem;
+  gap: 10px;
+}
+
+.card.card-new .card-body .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  gap: 5px;
+}
+
+.card.card-new .card-body .title-wrapper .new-title {
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  height: 108px;
+  max-height: 108px;
+}
+
+.card.card-new .card-body .title-wrapper .new-title:hover {
+  text-decoration: underline;
+}
+
+.card.card-new .card-body .title-wrapper .new-title:hover,
+.card.card-new .card-body .title-wrapper .save {
+  cursor: pointer;
+}
+
+.card.card-new .card-body .title-wrapper .save {
+  color: var(--primary-color);
+  margin-top: 5px;
+  z-index: 10;
+}
+
+.card.card.card-new .card-body .date {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 13px;
+  color: var(--font-color-secondary);
+}
+
+.card.card.card-new .card-body .date span {
+  color: var(--secondary-color);
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .card.card-new {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+
+  .card.card-new figure {
+    max-height: 9rem;
+    width: 100%;
+  }
+
+  .card.card-new figure img {
+    border-radius: 0.6rem 0.6rem 0 0;
+  }
+  .card.card-new .card-body .title-wrapper .new-title {
+    height: 90px;
+    font-size: 20px;
+  }
+}

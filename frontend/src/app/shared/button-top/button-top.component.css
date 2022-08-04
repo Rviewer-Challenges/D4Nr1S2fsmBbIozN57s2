@@ -1,0 +1,19 @@
+.btn-top {
+  z-index: 99;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  height: 3.5rem;
+  width: 3.5rem;
+  transition: 0.5s;
+  border-radius: 50%;
+  font-size: 24px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media (max-width: 768px) {
+  .btn-top {
+    bottom: 80px;
+    right: 20px;
+  }
+}

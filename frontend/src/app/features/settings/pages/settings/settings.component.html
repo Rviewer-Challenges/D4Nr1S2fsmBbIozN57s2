@@ -1,0 +1,33 @@
+<section class="settings-section">
+  <div class="title-wrapper">
+    <span class="title-section">Settings</span>
+  </div>
+  <div class="content">
+    <div class="card card-profile" *ngIf="isAuthenticated">
+      <span class="title">Profile</span>
+      <app-user-form></app-user-form>
+    </div>
+    <div class="card card-preferences">
+      <span class="title">Preferences</span>
+      <div class="card-body">
+        <div class="item">
+          <span class="description">Appearence</span>
+          <app-toggle-theme></app-toggle-theme>
+        </div>
+        <div class="item">
+          <span class="description">Modify subscriptions</span>
+          <button routerLink="/websites" class="btn btn-primary">Modify</button>
+        </div>
+      </div>
+    </div>
+    <div class="auth-section">
+      <button (click)="logOut()" class="btn btn-danger btn-lg" *ngIf="isAuthenticated">Log out</button>
+      <div class="auth" *ngIf="!isAuthenticated">
+        <span class="desc">You want to see more content</span>
+        <button (click)="showModal('login')" class="btn btn-following btn-lg">Sign in</button>
+        <span class="desc">or</span>
+        <button (click)="showModal('register')" class="btn btn-primary btn-lg">Sign on</button>
+      </div>
+    </div>
+  </div>
+</section>

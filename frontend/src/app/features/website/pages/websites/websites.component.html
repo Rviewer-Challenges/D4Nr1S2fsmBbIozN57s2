@@ -1,0 +1,31 @@
+<section class="websites-section">
+  <div class="title-wrapper">
+    <span class="title-section">Websites availables</span>
+  </div>
+  <div class="websites-wrapper">
+    <div class="skeletons" *ngIf="isLoading">
+      <app-card-new></app-card-new>
+      <app-card-new></app-card-new>
+      <app-card-new></app-card-new>
+    </div>
+    <div *ngIf="!isLoading">
+      <div class="card card-website" *ngFor="let website of websites">
+        <figure>
+          <img [src]="website.image" alt="website-image" onerror="this.src='/assets/images/not-found-image.jpg'">
+        </figure>
+        <div class="card-body">
+          <div class="website-title">
+            <span class="title">{{website.name}}</span>
+            <button (click)="subscribeWebsite(website._id)" [class.btn-following]="website.inUser"
+              class="btn btn-primary btn-subscribe">{{ (website.inUser) ?
+              'Following' : 'Subscribe' }}</button>
+          </div>
+          <p class="w-desc">{{website.description}}</p>
+          <div class="link">
+            <a [href]="website.link" target="_blank" class="w-link">View original site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
